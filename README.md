@@ -1,5 +1,7 @@
 # Ngx-Echarts Starter Project
 
+A starter project for [ngx-echarts](https://github.com/xieziyu/ngx-echarts)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
