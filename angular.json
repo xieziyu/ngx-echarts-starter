@@ -30,8 +30,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/echarts/dist/echarts.min.js",
-              "node_modules/echarts/theme/macarons.js"
             ]
           },
           "configurations": {

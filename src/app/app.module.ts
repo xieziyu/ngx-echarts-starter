@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
