@@ -6,13 +6,13 @@
 </div>
 
 <h3>Easy to show an echarts: </h3>
-<div echarts [options]="options"></div>
+<div echarts [options]="options" class="chart"></div>
 
 <h3>Easy to choose a theme: </h3>
-<div echarts [options]="options" theme="macarons"></div>
+<div echarts [options]="options" theme="macarons" class="chart"></div>
 
 <h3>Easy to update data asynchronous: <button (click)="getData()" style="padding: 0.5em;">Get Data</button></h3>
-<div echarts [options]="options" [merge]="mergeOption" [loading]="loading"></div>
+<div echarts [options]="options" [merge]="mergeOption" [loading]="loading" class="chart"></div>
 
 <h3>Async pipe and graph chart </h3>
-<div echarts [options]="graphOption | async"></div>
+<div echarts [options]="graphOption | async" class="chart-lg"></div>

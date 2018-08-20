@@ -22,7 +22,7 @@
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "echarts": "^4.1.0",
-    "ngx-echarts": "^4.0.0-beta.0",
+    "ngx-echarts": "^4.0.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

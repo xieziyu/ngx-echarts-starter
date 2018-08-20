@@ -4011,9 +4011,9 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-ngx-echarts@^4.0.0-beta.0:
-  version "4.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/ngx-echarts/-/ngx-echarts-4.0.0-beta.0.tgz#9e4daeaddd25fb789957644b8bc4b2ebd1462c4f"
+ngx-echarts@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-echarts/-/ngx-echarts-4.0.0.tgz#2b3d864faf88733733289baf788456612093516c"
   dependencies:
     tslib "^1.9.0"
 
