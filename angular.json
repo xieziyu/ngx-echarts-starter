@@ -30,6 +30,7 @@
               "src/styles.scss"
             ],
             "scripts": [
+              "node_modules/echarts/dist/echarts.min.js"
             ]
           },
           "configurations": {
