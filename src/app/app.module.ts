@@ -6,13 +6,16 @@ import { NgxEchartsModule } from 'ngx-echarts';
 
 import { AppComponent } from './app.component';
 
+import * as echarts from 'echarts';
+import 'echarts/theme/macarons.js';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    NgxEchartsModule,
+    NgxEchartsModule.forRoot({ echarts }),
     HttpClientModule
   ],
   providers: [],

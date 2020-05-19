@@ -10,21 +10,23 @@ import { gexf } from 'echarts/extension/dataTool';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   options = {
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
     },
-    series: [{
-      data: [820, 932, 901, 934, 1290, 1330, 1320],
-      type: 'line'
-    }]
+    series: [
+      {
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line',
+      },
+    ],
   };
 
   mergeOption: any;
@@ -32,19 +34,19 @@ export class AppComponent implements OnInit {
 
   graphOption: Observable<EChartOption>;
 
-  constructor(private api: MockServerService, private http: HttpClient) { }
+  constructor(private api: MockServerService, private http: HttpClient) {}
 
   ngOnInit() {
     this.graphOption = this.http.get('assets/les-miserables.gexf', { responseType: 'text' }).pipe(
-      map(xml => {
+      map((xml) => {
         const graph = gexf.parse(xml);
         const categories = [];
         for (let i = 0; i < 9; i++) {
           categories[i] = {
-            name: '类目' + i
+            name: '类目' + i,
           };
         }
-        graph.nodes.forEach(function (node) {
+        graph.nodes.forEach((node) => {
           node.itemStyle = null;
           node.symbolSize = 10;
           node.value = node.symbolSize;
@@ -58,15 +60,15 @@ export class AppComponent implements OnInit {
             text: 'Les Miserables',
             subtext: 'Default layout',
             top: 'bottom',
-            left: 'right'
+            left: 'right',
           },
           tooltip: {},
-          legend: [{
-            // selectedMode: 'single',
-            data: categories.map(function (a) {
-              return a.name;
-            })
-          }],
+          legend: [
+            {
+              // selectedMode: 'single',
+              data: categories.map((a) => a.name),
+            },
+          ],
           animation: false,
           series: [
             {
@@ -75,30 +77,35 @@ export class AppComponent implements OnInit {
               layout: 'force',
               data: graph.nodes,
               links: graph.links,
-              categories: categories,
+              categories,
               roam: true,
               label: {
                 normal: {
-                  position: 'right'
-                }
+                  position: 'right',
+                },
               },
               force: {
-                repulsion: 100
-              }
-            }
-          ]
+                repulsion: 100,
+              },
+            },
+          ],
         };
-      })
+      }),
     );
   }
 
   getData() {
     this.loading = true;
-    this.api.getData()
-      .then(data => {
+    this.api
+      .getData()
+      .then((data) => {
         this.mergeOption = { series: [{ data }] };
       })
-      .catch(e => { /** Error Handler */ })
-      .then(() => { this.loading = false; });
+      .catch((e) => {
+        /** Error Handler */
+      })
+      .then(() => {
+        this.loading = false;
+      });
   }
 }
