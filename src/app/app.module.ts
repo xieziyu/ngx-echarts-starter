@@ -17,11 +17,12 @@ import {
 import {
   CanvasRenderer
 } from 'echarts/renderers';
-import 'echarts/theme/macarons.js';
+import Marcaron from './marcaron';
 
 echarts.use(
   [TitleComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer]
 );
+echarts.registerTheme('macarons', Marcaron);
 
 @NgModule({
   declarations: [
