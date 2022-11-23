@@ -115,6 +115,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-echarts-starter"
+    }
+  }
 }
