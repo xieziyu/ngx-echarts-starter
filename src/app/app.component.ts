@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MockServerService } from './mock-server.service';
+import { NgxEchartsDirective, provideEchartsCore } from 'ngx-echarts';
+import { echarts } from './custom-echarts';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [NgxEchartsDirective],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
+  providers: [provideEchartsCore({ echarts })],
 })
 export class AppComponent {
   options = {
@@ -27,7 +31,7 @@ export class AppComponent {
   mergeOption: any;
   loading = false;
 
-  constructor(private api: MockServerService, private http: HttpClient) {}
+  constructor(private api: MockServerService) {}
 
   getData() {
     this.loading = true;
@@ -35,9 +39,6 @@ export class AppComponent {
       .getData()
       .then((data) => {
         this.mergeOption = { series: [{ data }] };
-      })
-      .catch((e) => {
-        /** Error Handler */
       })
       .then(() => {
         this.loading = false;
